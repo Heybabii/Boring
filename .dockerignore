@@ -1,0 +1,5 @@
+webapp/node_modules
+webapp/npm-debug.log
+Dockerfile
+.dockerignore
+.git
