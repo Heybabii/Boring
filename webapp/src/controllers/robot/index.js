@@ -1,18 +1,13 @@
 import { Router as router } from 'express';
 import distance from './distance';
+import { updatePosition } from './position';
 
 export { distance };
 
-export default () => {
+export default db => {
   const api = router();
 
-  // api.post(
-  //   '/signin',
-  //   passport.authenticate('local', { session: false }),
-  //   signIn,
-  // );
-
-  // api.post('/signup', signUp(models));
+  api.put('/{robotId}/position', updatePosition(db));
 
   return api;
 };
