@@ -1,5 +1,5 @@
 import { Router as router } from 'express';
-import passport from 'passport';
+// import passport from 'passport';
 import signIn from './sign-in';
 import signUp from './sign-up';
 
