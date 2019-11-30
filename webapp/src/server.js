@@ -8,7 +8,7 @@ const app = express();
 
 middlewareConfig(app);
 
-app.use('/api', routes(config));
+app.use(routes(config));
 
 app.listen(8000, err => {
   if (err) {

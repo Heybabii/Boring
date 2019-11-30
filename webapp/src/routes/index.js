@@ -7,7 +7,7 @@ import express from 'express';
 
 export default config => {
   const routers = express();
-  // routers.use('/auth', auth(null, config));
+  routers.post('/auth', auth(null, config));
 
   routers.use('/private', (req, res) => {
     return res.status(200).json('Hello-World');
