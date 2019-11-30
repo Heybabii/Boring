@@ -5,7 +5,7 @@ export default (req, res, next) => {
 
     if (!first_pos || !second_pos) return res.status(424).send("Insufficient data to compute the result");
     if(typeof first_pos == "string"){
-        if(/^robotF([1-9][0-9]*)$/.test(first_pos)){
+        if(/^robot#([1-9][0-9]*)$/.test(first_pos)){
             const id = first_pos.match(/[1-9][0-9]/);
             x1 = FROM_ID_X1;//for por
             y1 = FROM_ID_Y1;//for por
@@ -21,7 +21,7 @@ export default (req, res, next) => {
     }
 
     if(typeof second_pos == 'string'){
-        if(/^robotF([1-9][0-9]*)$/.test(second_pos)){
+        if(/^robot#([1-9][0-9]*)$/.test(second_pos)){
             const id = first_pos.match(/[1-9][0-9]/);
             x2 = FROM_ID_X2;//for por
             y2 = FROM_ID_Y2;//for por
