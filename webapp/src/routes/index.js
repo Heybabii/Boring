@@ -3,7 +3,7 @@ import robot, { distance } from '../controllers/robot';
 
 export default db => {
   const routers = express();
-  routers.post('/distance', distance);
+  routers.post('/distance', distance(db));
 
   routers.use('/robot', robot(db));
 
