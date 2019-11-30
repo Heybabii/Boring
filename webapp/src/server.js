@@ -9,6 +9,8 @@ import FileSync from 'lowdb/adapters/FileSync';
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
+db.defaults({ robots: [] }).write();
+
 const app = express();
 
 middlewareConfig(app);

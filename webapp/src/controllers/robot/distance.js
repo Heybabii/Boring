@@ -9,7 +9,7 @@ function isJson(str) {
 export default (req, res, next) => {
   const { first_pos, second_pos, metric } = res.body;
   if (!first_pos || !second_pos)
-    return res.status(424).sand('Insufficient data to compute the result');
+    return res.status(424).send('Insufficient data to compute the result');
   if (isJson(first_pos) && isJson(second_pos)) {
     if (metric) {
       if (metric == 'euclidean') {
