@@ -1,13 +1,17 @@
 import express from 'express';
-import User from '../models/user';
+// import User from '../models/user';
 
-import auth from '../controllers/auth';
+// import auth from '../controllers/auth';
 
-const models = { User };
+// const models = { User };
 
 export default config => {
   const routers = express();
-  routers.use('/auth', auth(models, config));
+  // routers.use('/auth', auth(null, config));
+
+  routers.use('/private', (req, res) => {
+    return res.status(200).json('Hello-World');
+  });
 
   return routers;
 };
